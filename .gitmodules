@@ -1,0 +1,4 @@
+[submodule "doo-it/aspenspa"]
+	path = doo-it/aspenspa
+	url = git@github.com:doo-it/aspenspa.git
+	branch = aspenspa
