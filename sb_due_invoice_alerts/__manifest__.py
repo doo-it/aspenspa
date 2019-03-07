@@ -20,7 +20,7 @@
                     
                     Powered by: snippetbucket technologies, snippetbucket.com
                    """,
-    'depends' : ['calendar','account','account_invoicing'],
+    'depends' : ['calendar','account','account_accountant'],
     'author': "SnippetBucket",
     'website': "https://snippetbucket.com/",
     'category': 'SnippetBucket',
