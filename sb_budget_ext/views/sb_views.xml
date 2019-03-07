@@ -15,5 +15,19 @@
       </field>
     </record>
 
+
+    <record id="crossovered_budget_lines_extended_tree" model="ir.ui.view">
+      <field name="name">crossovered.budget.lines.tree</field>
+      <field name="model">crossovered.budget.lines</field>
+      <field name="inherit_id" ref="account_budget.view_crossovered_budget_line_tree"/>
+      <field name="arch" type="xml">
+        <data>
+          <xpath expr="//field[@name='practical_amount']" position="after">
+              <field name="estimated_amount" />
+          </xpath>
+        </data>
+      </field>
+    </record>
+
  	</data>
 </odoo>
