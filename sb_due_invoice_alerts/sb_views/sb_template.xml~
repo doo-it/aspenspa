@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="sale_complain" name="Student" >
+            <t t-call="website.layout">
+                <div class="oe_structure">
+                    <div class="container">
+                        <center>
+                        <input type="text" name="serialnumber"></input>
+                        <input type="submit" value="Submit"></input>
+                        </center>
+                    </div>
+                </div>
+            </t>
+        </template>
+        
+    </data>
+</odoo>
