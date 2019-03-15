@@ -30,13 +30,16 @@ class account_invoice(models.Model):
         invitee_ids = []
         obj = super(account_invoice, self).action_invoice_open()
         if self.date_due and self.number:
-            min_15 = _alarm.sudo().search([('name','=','15 Minute(s)'),('type','=','notification')],limit=1).id
+            min_15 = self.env.ref('calendar.alarm_notif_1').id 
+            # min_15 = _alarm.sudo().search([('name','=','15 Minute(s)'),('type','=','notification')],limit=1).id
             if min_15:
                 alarm_ids.append(min_15)
-            hour_1 = _alarm.sudo().search([('name','=','1 Hour(s)'),('type','=','notification')],limit=1).id
+            hour_1 = self.env.ref('calendar.alarm_notif_3').id
+            # hour_1 = _alarm.sudo().search([('name','=','1 Hour(s)'),('type','=','notification')],limit=1).id
             if hour_1:
                 alarm_ids.append(hour_1)
-            day_1 = _alarm.sudo().search([('name','=','1 Day(s)'),('type','=','notification')],limit=1).id
+            day_1 = self.env.ref('calendar.alarm_notif_5').id
+            # day_1 = _alarm.sudo().search([('name','=','1 Day(s)'),('type','=','notification')],limit=1).id
             if day_1:
                 alarm_ids.append(day_1)
             date_format = self.env['res.lang'].sudo().search([('active','=',True)],limit=1).date_format
