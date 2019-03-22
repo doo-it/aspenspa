@@ -11,6 +11,7 @@ class crossovered_budget_lines(models.Model):
         compute='_compute_estimate_amount', string='Estimated Amount', help="Estimated Amount.",store=True)   
 
     @api.multi
+    @api.depends('planned_amount','practical_amount')
     def _compute_estimate_amount(self):
         for i in self:
             i.estimated_amount = i.planned_amount - i.practical_amount
